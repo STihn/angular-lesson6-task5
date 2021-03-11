@@ -1,0 +1,15 @@
+.form {
+  border: 2px solid wheat;
+  width: 1240px;
+}
+
+.table {
+  list-style: none;
+}
+
+.lists {
+  margin-top: 5px;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}

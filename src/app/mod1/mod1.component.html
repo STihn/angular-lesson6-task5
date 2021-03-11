@@ -1,0 +1,45 @@
+<form [formGroup]="formreactive" class="form">
+  <ul formArrayName="rows" class="table">
+    <input type="text" value="№" disabled/>
+    <input type="text" value="Дата урока" disabled/>
+    <input type="text" value="Тема урока" disabled/>
+    <input type="text" value="Домашнее задание" disabled/>
+    <input type="text" value="Примечание" disabled class="margin-bottom"/>
+    <li *ngFor="let row of rows.controls; let i = index" [formGroupName]="i" class="lists">
+        <input type="number" [value]="i+1" disabled/>
+        <input type="date" formControlName="date">
+        <input type="text" formControlName="theme">
+        <input type="text" formControlName="homework">
+        <input type="text" formControlName="note">
+        <button type="button" (click)="remoute(i)">remoute</button>
+        <button type="button" (click)="insert(i+1)">add</button>
+    </li>
+  </ul>
+</form>
+
+
+<!-- <table border="1px">
+  <tr>
+    <th>№</th>
+    <th>Дата урока</th>
+    <th>Тема урока</th>
+    <th>Домашнее задание</th>
+    <th>Примечание</th>
+  </tr>
+  <tr [formGroup]="formreactive">
+    <td formArrayName="rows">
+      <tr  *ngFor="let row of rows.controls;let i = index" [formGroupName]="i">
+        <td>{{i+1}}</td>
+        <td><input type="date" formControlName="date"></td>
+        <td><input type="text" formControlName="theme"></td>
+        <td><input type="text" formControlName="homework"></td>
+        <td><input type="text" formControlName="note"></td>
+      </tr>
+    </td>
+  <tr>
+
+
+
+</table> -->
+
+<code>{{formreactive.value | json}}</code>
